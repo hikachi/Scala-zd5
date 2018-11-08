@@ -1,0 +1,55 @@
+def zd5a(x:Int,a:Int,b:Int):Int={
+  (x>b) match
+  {
+    case true => b
+    case false=> zd5ahelp(x,a,b)
+  }
+}
+
+def zd5ahelp(x:Int,a:Int,b:Int):Int={
+   (x<a) match
+  {
+    case true => a
+    case false => x
+  }
+}
+
+zd5a(10,2,11)
+zd5a(5,7,10)
+zd5a(12,3,8)
+
+def zd5b(x:Double,y:Double)(x2:Double,y2:Double)={
+   ((x==x2),(y==y2))match
+   {
+     case (true,true) => 0.0
+     case (true,_)=> pierwiastek(scala.math.pow((y2-y),2))
+     case (_,true)=> pierwiastek (scala.math.pow((x2-x),2))
+       case(_,_)=> pierwiastek ( (scala.math.pow((y2-y),2))+(scala.math.pow((x2-x),2)))
+
+   }
+}
+def pierwiastek(x:Double): Double =
+{
+  (x<0) match
+  {
+    case false =>  scala.math.sqrt(x)
+    case true=> 0.0
+  }
+}
+zd5b(1,2)(1,2)
+zd5b(3,5)(3,10)
+zd5b(3,7)(5,12)
+
+def zd5c(t:Double,s:Double)=
+{
+  przyspieszenie(s/t,t)
+
+}
+
+def przyspieszenie(v:Double,t:Double)=
+{
+  v/t
+
+}
+
+zd5c(10,20)
